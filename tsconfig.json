@@ -25,5 +25,7 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "files": ["src/background.ts"],
+  "include": ["src/background.ts"]
 }

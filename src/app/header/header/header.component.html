@@ -1,5 +1,9 @@
-<div align="center">
-  <button mat-raised-button color="primary" (click)="onClickStoreTabs()" matTooltip="Close and save all tabs">
+<div align="center" style="min-width: 200px;">
+  <button mat-raised-button color="primary" (click)="onClickCloseSaveTabs()" matTooltip="Close and save all tabs">
+    <mat-icon>highlight_off</mat-icon>
+  </button>
+  <button mat-raised-button color="primary" (click)="onClickSaveTabs()" matTooltip="Only save all tabs"
+          style="margin-left: 5px">
     <mat-icon>trending_flat</mat-icon>
   </button>
 </div>

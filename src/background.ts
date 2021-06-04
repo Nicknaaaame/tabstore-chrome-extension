@@ -1,7 +1,6 @@
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.webNavigation.onCompleted.addListener(() => {
-    chrome.tabs.query({ active: true, currentWindow: true }, ([{ id }]) => {
-      chrome.pageAction.show(id as number);
-    });
-  }, { url: [{ urlMatches: 'google.com' }] });
+console.log('Store is clean');
+chrome.storage.local.clear();
+chrome.storage.onChanged.addListener(changes => {
+  console.log(changes);
 });
+

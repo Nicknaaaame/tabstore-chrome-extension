@@ -1,6 +1,7 @@
 {
-  "extends": "tslint:recommended",
+//  "extends": "tslint:recommended",
   "rules": {
+    "semicolon": false,
     "array-type": false,
     "arrow-parens": false,
     "deprecation": {
@@ -69,7 +70,7 @@
     "object-literal-sort-keys": false,
     "ordered-imports": false,
     "quotemark": [
-      true,
+      false,
       "single"
     ],
     "trailing-comma": false,

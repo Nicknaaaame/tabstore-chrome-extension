@@ -2,11 +2,19 @@
   <mat-expansion-panel>
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{tabPack.creationTime | date: 'MM/dd/yyyy hh:mm'}} &nbsp;
+        <form class="example-form">
+          <mat-form-field>
+            <input matInput [(ngModel)]="tabPack.name" (input)="onChangeEditName()" name="name">
+          </mat-form-field>
+        </form>
       </mat-panel-title>
     </mat-expansion-panel-header>
+    <button mat-raised-button color="primary" (click)="onClickSaveName()" *ngIf="isNameEdited">
+      Save
+    </button>
     <div *ngFor="let tab of tabPack.tabs">
-      <button mat-button style="max-width: 200px; overflow-x: hidden !important; margin-left: -10px" (click)="onClickOpenTab(tab)">
+      <button mat-button style="max-width: 200px; overflow-x: hidden !important; margin-left: -10px"
+              (click)="onClickOpenTab(tab)">
         <img *ngIf="tab.favIconUrl" [src]="tab.favIconUrl" alt="favIcon" width="20" height="20">
         {{tab.title}}
       </button>
@@ -15,7 +23,8 @@
   <button mat-raised-button style="margin-left: 5px" (click)="onClickOpenPack()" matTooltip="Open all tabs">
     <mat-icon>open_in_new</mat-icon>
   </button>
-  <button mat-raised-button style="margin-left: 5px" (click)="onClickRemovePack()" matTooltip="Delete these tabs" color="warn">
+  <button mat-raised-button style="margin-left: 5px" (click)="onClickRemovePack()" matTooltip="Delete these tabs"
+          color="warn">
     <mat-icon>close</mat-icon>
   </button>
 </div>

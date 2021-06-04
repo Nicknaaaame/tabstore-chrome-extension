@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import Tab = chrome.tabs.Tab;
 import {of, TabPack} from '../../service/model/tabpack.model';
 import {StoreService} from '../../service/store.service';
+import {devCons} from '../../../environments/environment';
 
 @Component({
   selector: 'app-header',

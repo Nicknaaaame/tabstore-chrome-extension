@@ -10,6 +10,7 @@ import {StoreService} from '../../service/store.service';
 export class TabPackComponent implements OnInit {
   @Input()
   tabPack: TabPack;
+  isNameEdited = false;
 
   constructor(private storeService: StoreService) {
   }
@@ -29,5 +30,14 @@ export class TabPackComponent implements OnInit {
 
   onClickRemovePack() {
     this.storeService.removePack(this.tabPack);
+  }
+
+  onChangeEditName() {
+    this.isNameEdited = true;
+  }
+
+  onClickSaveName() {
+    this.isNameEdited = false;
+    this.storeService.updatePack(this.tabPack)
   }
 }

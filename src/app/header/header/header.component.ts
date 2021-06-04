@@ -17,17 +17,18 @@ export class HeaderComponent implements OnInit {
 
   onClickStoreTabs() {
     chrome.tabs.query({currentWindow: true}, tabs => {
-      // chrome.tabs.create({active: false});
+      chrome.tabs.create({active: false});
       let tabsToStore: Array<Tab> = [];
       for (let i = 0; i < tabs.length; i++) {
-        let tab = tabs[i];
-        // chrome.tabs.remove(tab.id);
-        if (tab.url != 'chrome://newtab/') {
-          tabsToStore.push(tab);
+        if (tabs[i].url != 'chrome://newtab/') {
+          tabsToStore.push(tabs[i]);
         }
       }
       if (tabsToStore.length != 0) {
         this.storeService.addPack(of(tabsToStore));
+      }
+      for (let i = 0; i < tabs.length; i++) {
+        chrome.tabs.remove(tabs[i].id);
       }
     });
   }

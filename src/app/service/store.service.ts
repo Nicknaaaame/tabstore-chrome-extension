@@ -16,12 +16,19 @@ export class StoreService {
       if (items['store'] != undefined) {
         packs = items['store'];
       }
-      packs.push(pack);
+      packs.unshift(pack);
       chrome.storage.local.set({store: packs});
     });
   }
 
-  // public getPucks(): Array<TabPack> {
-  //
-  // }
+  removePack(pack: TabPack): void {
+    let packs: Array<TabPack> = [];
+    chrome.storage.local.get(['store'], items => {
+      if (items['store'] != undefined) {
+        packs = items['store'];
+      }
+      packs.splice(packs.indexOf(pack), 1);
+      chrome.storage.local.set({store: packs});
+    });
+  }
 }

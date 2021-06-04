@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TabPack} from '../../service/model/tabpack.model';
+import {StoreService} from '../../service/store.service';
 
 @Component({
   selector: 'app-tabpack',
@@ -8,11 +9,25 @@ import {TabPack} from '../../service/model/tabpack.model';
 })
 export class TabPackComponent implements OnInit {
   @Input()
-  tabPack: TabPack
+  tabPack: TabPack;
 
-  constructor() { }
+  constructor(private storeService: StoreService) {
+  }
 
   ngOnInit() {
   }
 
+  onClickOpenTab(tab: chrome.tabs.Tab) {
+    chrome.tabs.create({active: false, url: tab.url, pinned: tab.pinned});
+  }
+
+  onClickOpenPack() {
+    this.tabPack.tabs.forEach(tab => {
+      chrome.tabs.create({active: false, url: tab.url, pinned: tab.pinned});
+    });
+  }
+
+  onClickRemovePack() {
+    this.storeService.removePack(this.tabPack);
+  }
 }

@@ -9,7 +9,7 @@ import {devCons} from '../../../environments/environment';
   styleUrls: ['./pack-list.component.css']
 })
 export class PackListComponent implements OnInit {
-  packs: Array<TabPack>=[] /*[
+  packs: Array<TabPack> = []; /*[
     of([{title: 'KEKL'} as Tab]),
     of([{title: 'KEKW'} as Tab]),
     of([{title: 'KEKWait'} as Tab]),
@@ -25,7 +25,6 @@ export class PackListComponent implements OnInit {
 
   constructor(private ngZone: NgZone) {
     chrome.storage.local.get(['store'], items => {
-      devCons.log(items)
       ngZone.run(() => {
         if (items['store'] != undefined) {
           this.packs = items['store'];

@@ -6,7 +6,7 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
     <div *ngFor="let tab of tabPack.tabs">
-      <button mat-button style="max-width: 200px; overflow-x: hidden !important;" (click)="onClickOpenTab(tab)">
+      <button mat-button style="max-width: 200px; overflow-x: hidden !important; margin-left: -10px" (click)="onClickOpenTab(tab)">
         <img *ngIf="tab.favIconUrl" [src]="tab.favIconUrl" alt="favIcon" width="20" height="20">
         {{tab.title}}
       </button>
@@ -15,7 +15,7 @@
   <button mat-raised-button style="margin-left: 5px" (click)="onClickOpenPack()" matTooltip="Open all tabs">
     <mat-icon>open_in_new</mat-icon>
   </button>
-  <button mat-raised-button style="margin-left: 5px" (click)="onClickRemovePack()" matTooltip="Delete these tabs">
+  <button mat-raised-button style="margin-left: 5px" (click)="onClickRemovePack()" matTooltip="Delete these tabs" color="warn">
     <mat-icon>close</mat-icon>
   </button>
 </div>

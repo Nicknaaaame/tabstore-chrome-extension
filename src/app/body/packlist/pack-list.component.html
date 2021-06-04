@@ -1,3 +1,6 @@
+<div *ngIf="packs.length==0">
+  <h3>No saved tabs yet</h3>
+</div>
 <div *ngFor="let pack of packs">
   <app-tabpack [tabPack]="pack"></app-tabpack>
 </div>

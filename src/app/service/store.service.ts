@@ -18,6 +18,9 @@ export class StoreService {
       }
       packs.unshift(pack);
       chrome.storage.local.set({store: packs});
+      chrome.storage.local.get(['store'], items => {
+        devCons.log('store', items['store']);
+      });
     });
   }
 
@@ -28,6 +31,16 @@ export class StoreService {
         packs = items['store'];
       }
       packs.splice(packs.indexOf(pack), 1);
+      chrome.storage.local.set({store: packs});
+    });
+  }
+
+  updatePack(pack: TabPack): void {
+    let packs: Array<TabPack> = [];
+    chrome.storage.local.get(['store'], items => {
+      packs = items['store'];
+      let index = packs.findIndex(value => value.uuid==pack.uuid);
+      packs[index] = pack;
       chrome.storage.local.set({store: packs});
     });
   }

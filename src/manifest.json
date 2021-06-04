@@ -12,11 +12,16 @@
       "runtime.js"
     ]
   },
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
   "permissions": [
     "activeTab",
     "webNavigation",
     "storage",
     "tabs"
   ],
-  "content_security_policy":"script-src 'self' https://apis.google.com; object-src 'self'"
+  "content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'"
 }

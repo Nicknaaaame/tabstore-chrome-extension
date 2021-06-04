@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TabPackComponent } from './tabpack/tab-pack.component';
 import { PackListComponent } from './packlist/pack-list.component';
-import {MatButtonModule, MatCardModule, MatExpansionModule, MatIconModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatExpansionModule, MatIconModule, MatTooltipModule} from '@angular/material';
 import { BodyComponent } from './body.component';
 
 
@@ -18,7 +18,8 @@ import { BodyComponent } from './body.component';
     MatExpansionModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatTooltipModule
   ]
 })
 export class BodyModule {

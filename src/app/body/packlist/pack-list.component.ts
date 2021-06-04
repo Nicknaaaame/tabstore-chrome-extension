@@ -1,7 +1,5 @@
 import {Component, NgZone, OnInit} from '@angular/core';
-import {of, TabPack} from '../../service/model/tabpack.model';
-import Tab = chrome.tabs.Tab;
-import {devCons} from '../../../environments/environment';
+import {TabPack} from '../../service/model/tabpack.model';
 
 @Component({
   selector: 'app-packlist',
@@ -9,19 +7,7 @@ import {devCons} from '../../../environments/environment';
   styleUrls: ['./pack-list.component.css']
 })
 export class PackListComponent implements OnInit {
-  packs: Array<TabPack> = []; /*[
-    of([{title: 'KEKL'} as Tab]),
-    of([{title: 'KEKW'} as Tab]),
-    of([{title: 'KEKWait'} as Tab]),
-    of([{title: 'KEKS'} as Tab]),
-    of([{title: 'KEKS'} as Tab]),
-    of([{title: 'KEKS'} as Tab]),
-    of([{title: 'KEKS'} as Tab]),
-    of([{title: 'KEKS'} as Tab]),
-    of([{title: 'KEKS'} as Tab]),
-    of([{title: 'KEKS'} as Tab]),
-    of([{title: 'KEKS'} as Tab]),
-  ];*/
+  packs: Array<TabPack> = [];
 
   constructor(private ngZone: NgZone) {
     chrome.storage.local.get(['store'], items => {

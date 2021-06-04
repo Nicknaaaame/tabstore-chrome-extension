@@ -38,6 +38,6 @@ export class TabPackComponent implements OnInit {
 
   onClickSaveName() {
     this.isNameEdited = false;
-    this.storeService.updatePack(this.tabPack)
+    this.storeService.updatePack(this.tabPack);
   }
 }

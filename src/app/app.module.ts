@@ -1,8 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppComponent} from './app.component';
 import {HeaderModule} from './header/header.module';
 import {BodyModule} from './body/body.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -14,7 +12,6 @@ export const myCustomTooltipDefaults: MatTooltipDefaultOptions = {
   touchendHideDelay: 1000,
 };
 
-
 @NgModule({
   declarations: [
     AppComponent
@@ -22,7 +19,6 @@ export const myCustomTooltipDefaults: MatTooltipDefaultOptions = {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     HeaderModule,
     BodyModule
   ],

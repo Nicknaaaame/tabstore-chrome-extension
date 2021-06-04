@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TabPackComponent } from './tabpack/tab-pack.component';
-import { PackListComponent } from './packlist/pack-list.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {TabPackComponent} from './tabpack/tab-pack.component';
+import {PackListComponent} from './packlist/pack-list.component';
 import {
   MatButtonModule,
   MatCardModule,
@@ -11,10 +11,8 @@ import {
   MatInputModule,
   MatTooltipModule
 } from '@angular/material';
-import { BodyComponent } from './body.component';
+import {BodyComponent} from './body.component';
 import {FormsModule} from '@angular/forms';
-
-
 
 @NgModule({
   declarations: [TabPackComponent, PackListComponent, BodyComponent],

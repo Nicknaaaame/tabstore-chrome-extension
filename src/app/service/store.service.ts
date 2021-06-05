@@ -30,7 +30,7 @@ export class StoreService {
       if (items['store'] != undefined) {
         packs = items['store'];
       }
-      packs.splice(packs.indexOf(pack), 1);
+      packs.splice(packs.findIndex(value => value.uuid==pack.uuid), 1);
       chrome.storage.local.set({store: packs});
     });
   }

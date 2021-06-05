@@ -1,6 +1,6 @@
 {
   "name": "Tab Store",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "Build an Extension with Angular",
   "manifest_version": 2,
   "browser_action": {

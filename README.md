@@ -1,4 +1,6 @@
 # Tab Store Chrome extension
+### Example
+![image](https://user-images.githubusercontent.com/48119336/122203471-44eb8980-cec8-11eb-83bf-7770c4a42f59.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
